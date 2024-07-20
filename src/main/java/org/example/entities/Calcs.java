@@ -1,10 +1,12 @@
 package org.example.entities;
 
+import org.example.entities.operacoes.Adicao;
+import org.example.entities.operacoes.Divisao;
+import org.example.entities.operacoes.Porcentagem;
+import org.example.entities.operacoes.Subtracao;
+
 import java.util.Scanner;
-import org.example.entities.Adicao;
-import org.example.entities.Subtracao;
-import org.example.entities.Divisao;
-import org.example.entities.RestodDivisao;
+
 public class Calcs {
 
     public void calcs() {
@@ -16,28 +18,36 @@ public class Calcs {
         System.out.println(" / ");
         System.out.println(" % ");
         String option = entry.next();
-        if (option == null) {
+
+        //Necessário implementação de uma excessão caso o usuário selecione uma opção inválida (Não existe ou é nulo)
+        /*if (option == null) {
             System.out.println("Você não selecionou uma opção !");
             calcs();
-        }
+        }*/
         switch (option) {
 
             case "+":
                 System.out.println("Operação selecionada: +");
-                Adicao a = new Adicao();
-                a.compli();
+                Adicao adic = new Adicao();
+                adic.compli();
                 break;
             case "-":
                 System.out.println("Operação selecionada: -");
                 int subtracao = 0;
+                Subtracao sub = new Subtracao();
+                sub.compli();
                 break;
             case "/":
                 System.out.println("Operação selecionada: /");
                 int divisao = 0;
+                Divisao div = new Divisao();
+                div.compli();
                 break;
             case "%":
                 System.out.println("Operação selecionada: %");
-                int resto = 0;
+                int porcentagem = 0;
+                Porcentagem porce = new Porcentagem();
+                porce.compli();
                 break;
         }
     }
